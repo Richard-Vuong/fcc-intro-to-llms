@@ -30,7 +30,7 @@ dropout = 0.2
 print(device)
 
 chars = ""
-with open("openwebtext/vocab.txt", 'r', encoding='utf-8') as f:
+with open("D:/GitHub/fcc-intro-to-llms/vocab.txt", 'r', encoding='utf-8') as f:
         text = f.read()
         chars = sorted(list(set(text)))
         
@@ -43,7 +43,7 @@ decode = lambda l: ''.join([int_to_string[i] for i in l])
 
 # memory map for using small snippets of text from a single file of any size
 def get_random_chunk(split):
-    filename = "openwebtext/train_split.txt" if split == 'train' else "openwebtext/val_split.txt"
+    filename = "train_split.txt" if split == 'train' else "val_split.txt"
     with open(filename, 'rb') as f:
         with mmap.mmap(f.fileno(), 0, access=mmap.ACCESS_READ) as mm:
             # Determine the file size and a random position to start reading
@@ -232,6 +232,7 @@ model = GPTLanguageModel()
 m = model.to(device)
 
 
+###
 # create a PyTorch optimizer
 optimizer = torch.optim.AdamW(model.parameters(), lr=learning_rate)
 
@@ -254,4 +255,6 @@ print(loss.item())
 with open('model-01.pkl', 'wb') as f:
     pickle.dump(model, f)
 print('model saved')
+
+
 

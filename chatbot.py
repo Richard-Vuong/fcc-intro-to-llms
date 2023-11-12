@@ -30,7 +30,7 @@ dropout = 0.2
 print(device)
 
 chars = ""
-with open("openwebtext/vocab.txt", 'r', encoding='utf-8') as f:
+with open("Github/fcc-intro-to-llms/vocab.txt", 'r', encoding='utf-8') as f:
         text = f.read()
         chars = sorted(list(set(text)))
         

@@ -9,7 +9,7 @@ def xz_files_in_dir(directory):
             files.append(filename)
     return files
 
-folder_path = "C:/Users/ellio/Downloads/openwebtext.tar/openwebtext"
+folder_path = "Github/fcc-intro-to-llms"
 output_file_train = "output_train.txt"
 output_file_val = "output_val.txt"
 vocab_file = "vocab.txt"
@@ -49,3 +49,6 @@ with open(output_file_val, "w", encoding="utf-8") as outfile:
 with open(vocab_file, "w", encoding="utf-8") as vfile:
     for char in vocab:
         vfile.write(char + '\n')
+
+
+
